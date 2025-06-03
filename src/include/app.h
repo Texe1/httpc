@@ -2,6 +2,10 @@
 
 #include "server.h"
 
+/*
+The App struct stores application level information that is shared between servers.
+This may include user details, 
+*/ 
 struct app {
 	int epoll;
 
@@ -12,5 +16,7 @@ struct app {
 	// TODO application state
 };
 
-int app_init(struct app* result);
-int app_terminate(struct app* app);
+int app_init(struct app*);
+int app_terminate(struct app*);
+
+int app_add_server(struct app*, struct server_cfg*);
